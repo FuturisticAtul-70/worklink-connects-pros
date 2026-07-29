@@ -1,24 +1,53 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/worklink/Navbar";
+import { Hero } from "@/components/worklink/Hero";
+import { Stats } from "@/components/worklink/Stats";
+import { Services } from "@/components/worklink/Services";
+import { Features } from "@/components/worklink/Features";
+import { HowItWorks } from "@/components/worklink/HowItWorks";
+import { BecomeWorker } from "@/components/worklink/BecomeWorker";
+import { Testimonials } from "@/components/worklink/Testimonials";
+import { Updates } from "@/components/worklink/Updates";
+import { Faq } from "@/components/worklink/Faq";
+import { CtaBanner } from "@/components/worklink/CtaBanner";
+import { Footer } from "@/components/worklink/Footer";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "WorkLink — Find Trusted Skilled Workers Near You" },
+      {
+        name: "description",
+        content:
+          "WorkLink connects you with verified electricians, plumbers, carpenters, welders, painters and more skilled professionals in your city.",
+      },
+      { property: "og:title", content: "WorkLink — Skilled Workers, One Click Away" },
+      {
+        property: "og:description",
+        content: "Book verified professionals for homes, businesses, repairs, construction and maintenance.",
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background font-sans scroll-smooth">
+      <Navbar />
+      <main>
+        <Hero />
+        <Stats />
+        <Services />
+        <Features />
+        <HowItWorks />
+        <BecomeWorker />
+        <Testimonials />
+        <Updates />
+        <Faq />
+        <CtaBanner />
+      </main>
+      <Footer />
     </div>
   );
 }

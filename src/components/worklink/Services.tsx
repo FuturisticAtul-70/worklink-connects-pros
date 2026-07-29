@@ -1,5 +1,5 @@
 import {
-  Zap, Droplet, Hammer, Paintbrush, Flame, Wrench, Snowflake, Bricks,
+  Zap, Droplet, Hammer, Paintbrush, Flame, Wrench, Snowflake, Brick,
   ArrowRight,
 } from "lucide-react";
 
@@ -11,7 +11,7 @@ const services = [
   { icon: Flame, title: "Welder", desc: "Metal fabrication, grills, gates & industrial." },
   { icon: Wrench, title: "Mechanic", desc: "Vehicles, appliances and machinery repair." },
   { icon: Snowflake, title: "AC Technician", desc: "Install, service and repair cooling systems." },
-  { icon: Bricks, title: "Mason", desc: "Brickwork, tiling, plastering and masonry." },
+  { icon: Brick, title: "Mason", desc: "Brickwork, tiling, plastering and masonry." },
 ];
 
 export function Services() {
